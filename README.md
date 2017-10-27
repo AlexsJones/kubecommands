@@ -24,3 +24,9 @@ kubectl get pods -o wide
 gcloud container node-pools delete default-pool \
    --cluster <YOUR_CLUSTER_NAME> --zone <YOUR_ZONE>
 ```
+
+### Proxy a pod
+
+```
+sudo kubectl port-forward kibana-83rrj 5601:5601 --namespace=elasticsearch
+```
