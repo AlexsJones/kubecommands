@@ -30,3 +30,9 @@ gcloud container node-pools delete default-pool \
 ```
 sudo kubectl port-forward kibana-83rrj 5601:5601 --namespace=elasticsearch
 ```
+
+### Spin up quick pod
+
+```
+kubectl run -i --tty busybox --image=busybox --restart=Never -- sh 
+```
