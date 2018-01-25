@@ -41,5 +41,5 @@ kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
 
 ```
 kubectl create clusterrolebinding cluster-admin-binding \
---clusterrole cluster-admin
+--clusterrole cluster-admin --user=<yada>
 ```
