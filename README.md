@@ -36,3 +36,10 @@ sudo kubectl port-forward kibana-83rrj 5601:5601 --namespace=elasticsearch
 ```
 kubectl run -i --tty busybox --image=busybox --restart=Never -- sh 
 ```
+
+### Role binding
+
+```
+kubectl create clusterrolebinding cluster-admin-binding \
+--clusterrole cluster-admin
+```
