@@ -43,3 +43,21 @@ kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
 kubectl create clusterrolebinding cluster-admin-binding \
 --clusterrole cluster-admin --user=<yada>
 ```
+
+### Node pool affinity
+```
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: dedicated
+            operator: In
+            values: ["my-pool"]
+  tolerations: 
+  - key: "key"
+    operator: "Equal"
+    value: "value"
+    effect: "NoSchedule"
+ ``
