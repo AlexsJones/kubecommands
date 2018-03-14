@@ -31,6 +31,12 @@ gcloud container node-pools delete default-pool \
 sudo kubectl port-forward kibana-83rrj 5601:5601 --namespace=elasticsearch
 ```
 
+### View pod on node
+
+```
+kubectl get pods -o wide --sort-by="{.spec.nodeName}"
+```
+
 ### Spin up quick pod
 
 ```
