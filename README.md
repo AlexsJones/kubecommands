@@ -50,6 +50,23 @@ kubectl create clusterrolebinding cluster-admin-binding \
 --clusterrole cluster-admin --user=<yada>
 ```
 
+### Labelling nodes & affinity
+```
+kubectl label node gke-foundation-default-pool-cc60e51f-88lm nodepool=test
+kubectl get nodes --show-labels=true | grep test
+```
+
+```
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/nodepool
+            operator: In
+            values:
+            - test
+```
 ### Node pool affinity
 ```
 spec:
