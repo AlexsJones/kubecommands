@@ -1,4 +1,7 @@
 
+### First stop. Always...
+
+`kubectl explain`
 
 
 ### Rescope cluster
