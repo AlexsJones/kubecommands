@@ -16,6 +16,12 @@ gcloud container node-pools create np1 --cluster NAME --machine-type n1-standard
 ```
 kubectl cordon <NODE_NAME>
 ```
+of for GKE..
+```
+for node in $(kubectl get nodes -l cloud.google.com/gke-nodepool=default-pool -o=name); do
+  kubectl cordon "$node";
+done
+```
 
 ```
 kubectl drain <NODE_NAME> --force
