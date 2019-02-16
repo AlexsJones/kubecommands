@@ -10,7 +10,7 @@ WARNING: Starting in Kubernetes v1.10, new clusters will no longer get compute-r
 
 
 ```
-gcloud container node-pools create np1 --cluster NAME --machine-type n1-standard-1 --num-nodes 5 --scopes https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/trace.append, https://www.googleapis.com/auth/devstorage.full_control,https://www.googleapis.com/auth/compute  --zone=us-central1-a
+gcloud container node-pools create np1 --cluster NAME --machine-type n1-standard-1 --num-nodes 5 --scopes https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/trace.append,https://www.googleapis.com/auth/devstorage.full_control,https://www.googleapis.com/auth/compute  --zone=us-central1-a
 ```
 
 ```
