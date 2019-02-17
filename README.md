@@ -94,7 +94,7 @@ spec:
     operator: "Equal"
     value: "value"
     effect: "NoSchedule"
- ``
+ ```
 
 ### Serverless knative triggermesh pod
 
