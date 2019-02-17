@@ -95,3 +95,7 @@ spec:
     value: "value"
     effect: "NoSchedule"
  ``
+
+### Serverless knative triggermesh pod
+
+`kubectl run -i --tty busybox --image=gcr.io/triggermesh/tm:v0.0.9 --restart=Never -- sh `
