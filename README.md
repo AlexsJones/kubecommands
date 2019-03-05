@@ -96,6 +96,12 @@ spec:
     effect: "NoSchedule"
  ```
 
+### View pod to node relation
+
+```
+kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --all-namespaces
+```
+
 ### Serverless knative triggermesh pod
 
 `kubectl run -i --tty busybox --image=gcr.io/triggermesh/tm:v0.0.9 --restart=Never -- sh `
