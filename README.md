@@ -3,7 +3,12 @@
 
 `kubectl explain`
 
-
+### Build a cluster
+```
+gcloud container clusters create example-cluster \
+--zone us-central1-a \
+--node-locations us-central1-a,us-central1-b,us-central1-c  --min-nodes=1 --scopes=https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/trace.append,https://www.googleapis.com/auth/devstorage.full_control,https://www.googleapis.com/auth/compute --project=myproject
+```
 ### Rescope cluster
 
 WARNING: Starting in Kubernetes v1.10, new clusters will no longer get compute-rw and storage-ro scopes added to what is specified in --scopes (though the latter will remain included in the default --scopes). To use these scopes, add them explicitly to --scopes. To use the new behavior, set container/new_scopes_behavior property (gcloud config set container/new_scopes_behavior true).
