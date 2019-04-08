@@ -53,6 +53,12 @@ sudo kubectl port-forward kibana-83rrj 5601:5601 --namespace=elasticsearch
 kubectl get pods -o wide --sort-by="{.spec.nodeName}"
 ```
 
+### View pod state over nodes
+
+```
+kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces
+```
+
 ### Spin up quick pod
 
 ```
