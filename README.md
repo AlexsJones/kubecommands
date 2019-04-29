@@ -5,9 +5,11 @@
 
 ### Build a cluster
 ```
+
+# This example includes cloud-platform which grants all API access but is required for monitor metric create
 gcloud container clusters create example-cluster \
 --zone us-central1-a \
---node-locations us-central1-a,us-central1-b,us-central1-c  --min-nodes=1 --scopes=https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/trace.append,https://www.googleapis.com/auth/devstorage.full_control,https://www.googleapis.com/auth/compute --project=myproject
+--node-locations us-central1-a,us-central1-b,us-central1-c  --min-nodes=1 --scopes=https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/trace.append,https://www.googleapis.com/auth/devstorage.full_control,https://www.googleapis.com/auth/compute,https://www.googleapis.com/auth/cloud-platform --project=myproject
 ```
 ### Rescope cluster
 
