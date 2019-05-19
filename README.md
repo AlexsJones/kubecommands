@@ -15,6 +15,7 @@ gcloud container clusters create example-cluster \
 
 WARNING: Starting in Kubernetes v1.10, new clusters will no longer get compute-rw and storage-ro scopes added to what is specified in --scopes (though the latter will remain included in the default --scopes). To use these scopes, add them explicitly to --scopes. To use the new behavior, set container/new_scopes_behavior property (gcloud config set container/new_scopes_behavior true).
 
+`https://www.googleapis.com/auth/cloud-platform` now required for stack trace
 
 ```
 gcloud container node-pools create np1 --cluster NAME --machine-type n1-standard-1 --num-nodes 5 --scopes https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/trace.append,https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/compute,https://www.googleapis.com/auth/service.management,https://www.googleapis.com/auth/servicecontrol  --zone=us-central1-a
