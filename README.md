@@ -158,7 +158,14 @@ jq  '.items[] | select(.status.reason!=null) | select(.status.reason | contains(
 "kubectl delete po \(.metadata.name) -n \(.metadata.namespace)"' | xargs -n 1 bash -c
 ```
 
-## Replace an image
+### Replace an image
 ```
 NAME=demo ;IMAGE=latest;kubectl set image deployment/$NAME $NAME=quay.io/alex/$DEMO:$IMAGE -n default
+```
+
+### Cat inject
+```
+cat << EOF | kubectl apply -f -
+<PASTE>
+EOF
 ```
