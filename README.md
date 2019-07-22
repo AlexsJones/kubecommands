@@ -105,6 +105,12 @@ kubectl create clusterrolebinding cluster-admin-binding \
 --clusterrole cluster-admin --user=<yada>
 ```
 
+```
+kubectl create clusterrolebinding cluster-admin-binding \
+    --clusterrole=cluster-admin \
+    --user=$(gcloud config get-value core/account)
+```
+
 ### Labelling nodes & affinity
 ```
 kubectl label node gke-foundation-default-pool-cc60e51f-88lm nodepool=test
