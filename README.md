@@ -175,3 +175,11 @@ cat << EOF | kubectl apply -f -
 <PASTE>
 EOF
 ```
+
+### GCloud tag instances
+
+```
+gcloud compute instances add-tags <instanceName> --tags test-network-impl --zone=us-east4-a
+gcloud compute instances list  --format='table(name,status,tags.list())'
+gcloud compute instances list --filter='tags:test-network-impl'
+```
