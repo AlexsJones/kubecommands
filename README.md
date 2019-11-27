@@ -3,6 +3,13 @@
 
 `kubectl explain`
 
+### Generate a template
+
+https://kubernetes.io/docs/reference/kubectl/conventions/
+
+`kubectl run helloworld --image=helloworld --dry-run -o yaml --generator=deployment/apps.v1beta1`
+
+
 ### Build a cluster
 ```
 
