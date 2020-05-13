@@ -190,3 +190,9 @@ gcloud compute instances add-tags <instanceName> --tags test-network-impl --zone
 gcloud compute instances list  --format='table(name,status,tags.list())'
 gcloud compute instances list --filter='tags:test-network-impl'
 ```
+
+### Get all OSImages
+
+```
+ kubectl get nodes -o jsonpath='{.items[*].status.nodeInfo.osImage}'
+ ```
