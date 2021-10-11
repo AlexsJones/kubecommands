@@ -196,3 +196,10 @@ gcloud compute instances list --filter='tags:test-network-impl'
 ```
  kubectl get nodes -o jsonpath='{.items[*].status.nodeInfo.osImage}'
  ```
+
+### Remove finalizers
+
+```
+kubectl get pod -o json -n cust-7f124581-808d-default | jq '.items[] | .metadata.name' | xargs -i% kubectl patch pod % -p '{"me
+tadata":{"finalizers":null}}' -n cust-7f124581-808d-default
+```
