@@ -203,3 +203,9 @@ gcloud compute instances list --filter='tags:test-network-impl'
 kubectl get pod -o json -n cust-7f124581-808d-default | jq '.items[] | .metadata.name' | xargs -i% kubectl patch pod % -p '{"me
 tadata":{"finalizers":null}}' -n cust-7f124581-808d-default
 ```
+
+### Print a secret with jq
+
+```
+kubectl get -n observability secrets/alertmanager-prom-kube-prometheus-stack-alertmanager -o json | jq '.data."alertmanager.yaml"' -r | base64 -d
+```
